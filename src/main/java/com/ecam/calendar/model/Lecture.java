@@ -22,7 +22,7 @@ public class Lecture {
     private Date weekDay;
 
 
-    protected Lecture() {}
+    public Lecture() {}
 
     public Lecture(String code, String room , Time startTime, Time endTime, Integer sessionNumber, String teachers, Date weekDay) {
         this.code = code;
@@ -71,5 +71,37 @@ public class Lecture {
 
     public Date getWeekDay() {
         return weekDay;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
+    }
+
+    public void setStartTime(Time startTime) {
+        this.startTime = startTime;
+    }
+
+    public void setEndTime(Time endTime) {
+        this.endTime = endTime;
+    }
+
+    public void setSessionNumber(Integer sessionNumber) {
+        this.sessionNumber = sessionNumber;
+    }
+
+    public void setTeachers(String teachers) {
+        this.teachers = teachers;
+    }
+
+    public void setWeekDay(Date weekDay) {
+        this.weekDay = weekDay;
     }
 }
