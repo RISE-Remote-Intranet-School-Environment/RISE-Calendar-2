@@ -1,4 +1,5 @@
 package com.ecam.calendar.model;
+import javax.persistence.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,9 @@ public class Room {
     private Long id;
     private String type;
     private Integer capacity;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Lecture lecture;
 
     protected Room() {}
 
@@ -39,4 +43,9 @@ public class Room {
     public Integer getCapacity() {
         return capacity;
     }
+
+    public static void setLecture(Lecture lecture) {
+        this.lecture = lecture;
+    }
+
 }

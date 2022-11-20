@@ -1,11 +1,10 @@
 package com.ecam.calendar.model;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.ecam.calendar.model.User;
+import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Lecture {
@@ -20,6 +19,29 @@ public class Lecture {
     private Integer sessionNumber;
     private String teachers;
     private Date weekDay;
+
+    @ManyToMany(mappedBy = "lectures")
+    public static List<User> users = new ArrayList<>();
+
+    @OneToMany(
+            mappedBy = "lecture",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Room> rooms = new ArrayList<>();
+
+    //Constructors, getters and setters removed for brevity
+
+    public void addRoom(Room room) {
+        rooms.add(room);
+        Room.setLecture(this);
+    }
+
+    public void removeRoom(Room room) {
+        rooms.remove(room);
+        Room.setLecture(null);
+    }
+
 
 
     public Lecture() {}
@@ -71,6 +93,10 @@ public class Lecture {
 
     public Date getWeekDay() {
         return weekDay;
+    }
+
+    public static List<User> getUsers() {
+        return users;
     }
 
     public void setId(Long id) {
