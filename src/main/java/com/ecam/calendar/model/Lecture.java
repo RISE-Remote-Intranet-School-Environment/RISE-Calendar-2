@@ -103,9 +103,7 @@ public class Lecture {
         this.id = id;
     }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
+    public void setCode(String code) { this.code = code; }
 
     public void setRoom(String room) {
         this.room = room;
