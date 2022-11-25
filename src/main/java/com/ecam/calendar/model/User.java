@@ -27,7 +27,7 @@ public class User {
     )
     private List<Lecture> lectures = new ArrayList<>();
 
-    protected User() {}
+    public User() {}
 
     public User(String firstName, String lastName, String role) {
         this.firstName = firstName;
@@ -68,4 +68,23 @@ public class User {
         Lecture.getUsers().remove(this);
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public void setLectures(List<Lecture> lectures) {
+        this.lectures = lectures;
+    }
 }

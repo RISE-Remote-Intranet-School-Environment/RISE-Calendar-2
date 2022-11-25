@@ -32,6 +32,7 @@ public class Lecture {
 
     //Constructors, getters and setters removed for brevity
 
+
     public void addRoom(Room room) {
         rooms.add(room);
         Room.setLecture(this);
@@ -95,9 +96,7 @@ public class Lecture {
         return weekDay;
     }
 
-    public static List<User> getUsers() {
-        return users;
-    }
+    public static List<User> getUsers() { return users; }
 
     public void setId(Long id) {
         this.id = id;
