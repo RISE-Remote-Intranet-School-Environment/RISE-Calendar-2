@@ -60,12 +60,12 @@ public class User {
 
     public void addLecture(Lecture lecture) {
         lectures.add(lecture);
-        Lecture.getUsers().add(this);
+        lecture.getUsers().add(this);
     }
 
     public void removeLecture(Lecture lecture) {
         lectures.remove(lecture);
-        Lecture.getUsers().remove(this);
+        lecture.getUsers().remove(this);
     }
 
     public void setFirstName(String firstName) {

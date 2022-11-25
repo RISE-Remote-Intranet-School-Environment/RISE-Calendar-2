@@ -1,5 +1,4 @@
 package com.ecam.calendar.model;
-import com.ecam.calendar.model.User;
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
@@ -23,27 +22,44 @@ public class Lecture {
     @ManyToMany(mappedBy = "lectures")
     public static List<User> users = new ArrayList<>();
 
-    @OneToMany(
-            mappedBy = "lecture",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "link_lecture_room",
+            joinColumns = @JoinColumn(name = "lecture_id"),
+            inverseJoinColumns = @JoinColumn(name = "room_id")
     )
     private List<Room> rooms = new ArrayList<>();
+
+
+
+
 
     //Constructors, getters and setters removed for brevity
 
 
-    public void addRoom(Room room) {
+    public void addRooms(Room room) {
         rooms.add(room);
-        Room.setLecture(this);
+        room.getLectures().add(this);
     }
 
-    public void removeRoom(Room room) {
+    public void removeRooms(Room room) {
         rooms.remove(room);
-        Room.setLecture(null);
+        room.getLectures().remove(this);
     }
 
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
+    }
 
+    public static void setUsers(List<User> users) {
+        Lecture.users = users;
+    }
+
+    public List<Room> getRooms() {
+        return rooms;
+    }
 
     public Lecture() {}
 

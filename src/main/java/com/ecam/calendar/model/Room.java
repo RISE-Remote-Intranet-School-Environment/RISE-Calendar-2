@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Room {
@@ -15,8 +17,13 @@ public class Room {
     private String type;
     private Integer capacity;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private static Lecture lecture;
+    public static List<Lecture> getLectures() {
+        return lectures;
+    }
+
+    @ManyToMany(mappedBy = "rooms")
+    public static List<Lecture> lectures = new ArrayList<>();
+
 
     public Room() {}
 
@@ -49,9 +56,6 @@ public class Room {
         this.id = id;
     }
 
-    public static void setLecture(Lecture lecture) {
-        this.lecture = lecture;
-    }
 
     public void setType(String type) {
         this.type = type;
@@ -61,9 +65,7 @@ public class Room {
         this.capacity = capacity;
     }
 
-
-
-    public static Lecture getLecture() {
-        return lecture;
+    public void setLectures(List<Lecture> lectures) {
+        this.lectures = lectures;
     }
 }
