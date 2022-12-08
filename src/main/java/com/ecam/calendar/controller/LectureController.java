@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+//import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -47,17 +47,17 @@ public class LectureController {
         return lectureRepository.findAll();
     }
 
-    @DeleteMapping(path="/Lecture/Delete/{id}")
-    public Map<String, Boolean> deleteLecture(@PathVariable(value = "id") Integer id)
-            throws ResourceNotFoundException {
-        Lecture lecture = lectureRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Lecture not found for this id :: " + id));
-
-        lectureRepository.delete(lecture);
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("deleted", Boolean.TRUE);
-        return response;
-    }
+//    @DeleteMapping(path="/Lecture/Delete/{id}")
+//    public Map<String, Boolean> deleteLecture(@PathVariable(value = "id") Integer id)
+//            throws ResourceNotFoundException {
+//        Lecture lecture = lectureRepository.findById(id)
+//                .orElseThrow(() -> new ResourceNotFoundException("Lecture not found for this id :: " + id));
+//
+//        lectureRepository.delete(lecture);
+//        Map<String, Boolean> response = new HashMap<>();
+//        response.put("deleted", Boolean.TRUE);
+//        return response;
+//    }
 }
 
 
