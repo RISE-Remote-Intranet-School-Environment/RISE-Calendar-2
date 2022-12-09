@@ -1,9 +1,11 @@
 package com.ecam.calendar.model;
-
+import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.*;
+import com.ecam.calendar.model.Lecture;
 
 @Entity
 public class User {
@@ -15,7 +17,17 @@ public class User {
     private String lastName;
     private String role;
 
-    protected User() {}
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "link_lecture_user",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "lecture_id")
+    )
+    private List<Lecture> lectures = new ArrayList<>();
+
+    public User() {}
 
     public User(String firstName, String lastName, String role) {
         this.firstName = firstName;
@@ -44,5 +56,35 @@ public class User {
 
     public String getRole() {
         return role;
+    }
+
+    public void addLecture(Lecture lecture) {
+        lectures.add(lecture);
+        lecture.getUsers().add(this);
+    }
+
+    public void removeLecture(Lecture lecture) {
+        lectures.remove(lecture);
+        lecture.getUsers().remove(this);
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public void setLectures(List<Lecture> lectures) {
+        this.lectures = lectures;
     }
 }
