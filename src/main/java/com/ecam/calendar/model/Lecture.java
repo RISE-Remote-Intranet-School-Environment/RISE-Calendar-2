@@ -10,6 +10,7 @@ public class Lecture {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    //@Column(nae)
     private Long id;
     private String code;
     private String room;
