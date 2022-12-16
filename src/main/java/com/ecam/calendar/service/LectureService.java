@@ -14,8 +14,7 @@ public class LectureService {
     @Autowired
     LectureRepository lectureRepository;
 
-    public static Optional<Lecture> getLectureById(Long id) {
-    }
+
 
     // CREATE
     public Lecture createLecture(Lecture lecture) {
@@ -31,7 +30,7 @@ public class LectureService {
     public Optional<Lecture> getLectureById(Long lectureId){return lectureRepository.findById(lectureId);}
 
     // READ by teacher
-    public List<Lecture> getLectureByteachers(String teachers){return lectureRepository.findAllByTeacher(teachers);}
+    public List<Lecture> getLectureByteachers(String teachers){return lectureRepository.findAllByteachers(teachers);}
     // DELETE
     public void deleteLecture(Long lectureId) {
         lectureRepository.deleteById(lectureId);

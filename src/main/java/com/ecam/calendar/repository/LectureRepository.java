@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface lectureRepository extends JpaRepository<Lecture, Long>{
+public interface LectureRepository extends JpaRepository<Lecture, Long>{
 
     //function find a course by its ue
     Optional<Lecture> findBycode(String code);
@@ -20,7 +20,7 @@ public interface lectureRepository extends JpaRepository<Lecture, Long>{
     //function to find all the courses linked to a teacher
     List<Lecture> findAllByteachers(String teachers);
 
-    //function to find all courses by academic year
+
 
 
 }

@@ -1,20 +1,13 @@
 package com.ecam.calendar.controller;
 
 
+import com.ecam.calendar.model.Lecture;
 import com.ecam.calendar.service.LectureService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 import java.util.Optional;
-
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.ecam.calendar.model.Lecture;
 
 
 @RestController
@@ -39,8 +32,8 @@ public class LectureController {
 
 
     @RequestMapping(value="/{lectureId}", method=RequestMethod.GET)
-    public Optional<Lecture> readLectureById(@PathVariable(value = "lectureId") Long id) {
-        return LectureService.getLectureById(id);
+    public Optional<Lecture> readLectureById(@PathVariable(value = "lectureId") Long lectureId) {
+        return LectureService.getLectureById(lectureId);
     }
 
 

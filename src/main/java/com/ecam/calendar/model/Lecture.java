@@ -1,7 +1,12 @@
 package com.ecam.calendar.model;
 
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.sql.Time;
 import java.util.Date;
 
@@ -49,7 +54,7 @@ public class Lecture {
         return code;
     }
 
-    public void setCode(String code) {
+    public static void setCode(String code) {
         this.code = code;
     }
 
@@ -57,7 +62,7 @@ public class Lecture {
         return room;
     }
 
-    public void setRoom(String code) {
+    public static void setRoom(String code) {
         this.room = room;
     }
 
@@ -65,7 +70,7 @@ public class Lecture {
         return teachers;
     }
 
-    public void setTeachers(String teachers) {
+    public static void setTeachers(String teachers) {
         this.teachers = teachers;
     }
 
@@ -73,7 +78,7 @@ public class Lecture {
         return sessionNumber;
     }
 
-    public void setsessionNumber(Integer sessionNumber) {
+    public static void setsessionNumber(Integer sessionNumber) {
         this.sessionNumber = sessionNumber;
     }
 
@@ -82,7 +87,7 @@ public class Lecture {
         return startTime;
     }
 
-    public void setStartTime(Time startTime) {
+    public static void setStartTime(Time startTime) {
         this.startTime = startTime;
     }
 
@@ -90,7 +95,7 @@ public class Lecture {
         return endTime;
     }
 
-    public void setEndTime(Time endTime) {
+    public static void setEndTime(Time endTime) {
         this.endTime = endTime;
     }
 
@@ -98,7 +103,7 @@ public class Lecture {
         return weekDay;
     }
 
-    public void setWeekDay(Date weekDay) {
+    public static void setWeekDay(Date weekDay) {
         this.weekDay = weekDay;
     }
 
