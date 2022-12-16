@@ -32,7 +32,7 @@ public class RoomController {
      *         "year:1
      *     }
      *
-     * @param course new course
+     * @param room new course
      * @return the new course
      */
     @RequestMapping(value="/rooms", method= RequestMethod.POST)
