@@ -1,4 +1,4 @@
 package com.ecam.calendar.service;
 
-public class roomService {
+public class RoomService {
 }
