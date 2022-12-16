@@ -1,71 +1,50 @@
 package com.ecam.calendar.model;
-import javax.persistence.*;
 
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Table;
+
 
 @Entity
+@Table(name = "room")
 public class Room {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
-    private String type;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="roomid")
+    private long roomId;
+
+    @Column(name="capacity")
     private Integer capacity;
 
-    public static List<Lecture> getLectures() {
-        return lectures;
+    @Column(name="type")
+    private String type;
+
+
+    public long getRoomId() {
+        return roomId;
     }
 
-    @ManyToMany(mappedBy = "rooms")
-    public static List<Lecture> lectures = new ArrayList<>();
-
-
-    public Room() {}
-
-    public Room(String type, Integer capacity) {
-        this.type = type;
-        this.capacity = capacity;
-    }
-
-
-    @Override
-    public String toString() {
-        return String.format(
-                "Room[id=%d, type='%s', capacity='%d']",
-                id, type, capacity);
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getType() {
-        return type;
+    public void setRoomId(long roomId) {
+        this.roomId = roomId;
     }
 
     public Integer getCapacity() {
         return capacity;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public void setCapacity(Integer capacity) {
         this.capacity = capacity;
     }
 
-    public void setLectures(List<Lecture> lectures) {
-        this.lectures = lectures;
+    public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
     }
 }
