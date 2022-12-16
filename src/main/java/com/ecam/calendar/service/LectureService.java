@@ -2,6 +2,7 @@ package com.ecam.calendar.service;
 
 
 import com.ecam.calendar.model.Lecture;
+
 import com.ecam.calendar.repository.LectureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,13 +40,13 @@ public class LectureService {
     // UPDATE
     public Lecture updateLecture(Long lectureId, Lecture lectureDetails) {
         Lecture lecture = lectureRepository.findById(lectureId).get();
-        Lecture.setCode(lectureDetails.getCode());
-        Lecture.setRoom(lectureDetails.getRoom());
-        Lecture.setTeachers(lectureDetails.getTeachers());
-        Lecture.setsessionNumber(lectureDetails.getsessionNumber());
-        Lecture.setStartTime(lectureDetails.getStartTime());
-        Lecture.setEndTime(lectureDetails.getEndTime());
-        Lecture.setWeekDay(lectureDetails.getWeekDay());
+        lectureDetails.setCode(lectureDetails.getCode());
+        lectureDetails.setRoom(lectureDetails.getRoom());
+        lectureDetails.setTeachers(lectureDetails.getTeachers());
+        lectureDetails.setsessionNumber(lectureDetails.getsessionNumber());
+        lectureDetails.setStartTime(lectureDetails.getStartTime());
+        lectureDetails.setEndTime(lectureDetails.getEndTime());
+        lectureDetails.setWeekDay(lectureDetails.getWeekDay());
 
 
 

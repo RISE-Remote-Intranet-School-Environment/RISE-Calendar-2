@@ -54,15 +54,15 @@ public class Lecture {
         return code;
     }
 
-    public static void setCode(String code) {
-        this.code = code;
+    public void setCode(String code) {
+
     }
 
     public String getRoom() {
         return room;
     }
 
-    public static void setRoom(String code) {
+    public  void setRoom(String code) {
         this.room = room;
     }
 
@@ -70,7 +70,7 @@ public class Lecture {
         return teachers;
     }
 
-    public static void setTeachers(String teachers) {
+    public void setTeachers(String teachers) {
         this.teachers = teachers;
     }
 
@@ -78,7 +78,7 @@ public class Lecture {
         return sessionNumber;
     }
 
-    public static void setsessionNumber(Integer sessionNumber) {
+    public void setsessionNumber(Integer sessionNumber) {
         this.sessionNumber = sessionNumber;
     }
 
@@ -87,7 +87,7 @@ public class Lecture {
         return startTime;
     }
 
-    public static void setStartTime(Time startTime) {
+    public  void setStartTime(Time startTime) {
         this.startTime = startTime;
     }
 
@@ -95,7 +95,7 @@ public class Lecture {
         return endTime;
     }
 
-    public static void setEndTime(Time endTime) {
+    public void setEndTime(Time endTime) {
         this.endTime = endTime;
     }
 
@@ -103,7 +103,7 @@ public class Lecture {
         return weekDay;
     }
 
-    public static void setWeekDay(Date weekDay) {
+    public void setWeekDay(Date weekDay) {
         this.weekDay = weekDay;
     }
 
