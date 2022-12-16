@@ -40,7 +40,7 @@ public class Lecture {
     //Constructors, getters and setters removed for brevity
 
 
-    public void addRooms(Room room) {
+    /*public void addRooms(Room room) {
         rooms.add(room);
         room.getLectures().add(this);
     }
@@ -48,7 +48,7 @@ public class Lecture {
     public void removeRooms(Room room) {
         rooms.remove(room);
         room.getLectures().remove(this);
-    }
+    }*/
 
     public void setRooms(List<Room> rooms) {
         this.rooms = rooms;
