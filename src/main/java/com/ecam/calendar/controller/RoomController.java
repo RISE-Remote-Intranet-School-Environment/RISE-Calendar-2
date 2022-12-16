@@ -1,20 +1,17 @@
 package com.ecam.calendar.controller;
+import com.ecam.calendar.model.Lecture;
 import com.ecam.calendar.model.Room;
-import com.ecam.calendar.repository.LectureRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+//import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.*;
-import java.sql.Date;
-import java.sql.Time;
-
 
 @Controller // This means that this class is a Controller
 @RequestMapping(path="/") // This means URL's start with /demo (after Application path)
@@ -24,7 +21,8 @@ public class RoomController {
     private com.ecam.calendar.repository.RoomRepository roomRepository;
 
     @PostMapping(path="/Room/Create") // Map ONLY POST Requests
-    public @ResponseBody String addNewRoom (@RequestParam String type , @RequestParam Integer capacity) {
+    public @ResponseBody String addNewRoom (@RequestParam String type
+            , @RequestParam Integer capacity) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
@@ -36,20 +34,21 @@ public class RoomController {
     }
 
     @GetMapping(path="/Room/Read")
-    public @ResponseBody Iterable<Room> getAllLectures() {
+    public @ResponseBody Iterable<Room> getAllRooms() {
         // This returns a JSON or XML with the users
         return roomRepository.findAll();
     }
 
-    @DeleteMapping(path="/Room/Delete/{id}")
-    public Map<String, Boolean> deleteLecture(@PathVariable(value = "id") Integer id)
-            throws ResourceNotFoundException {
-        Room room = roomRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Room not found for this id :: " + id));
+//    @DeleteMapping(path="/Room/Delete/{id}")
+//    public Map<String, Boolean> deleteLecture(@PathVariable(value = "id") Integer id)
+//            throws ResourceNotFoundException {
+//        Room lecture = roomRepository.findById(id)
+//                .orElseThrow(() -> new ResourceNotFoundException("Room not found for this id :: " + id));
+//
+//        roomRepository.delete(lecture);
+//        Map<String, Boolean> response = new HashMap<>();
+//        response.put("deleted", Boolean.TRUE);
+//        return response;
+//    }
 
-        roomRepository.delete(room);
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("deleted", Boolean.TRUE);
-        return response;
-    }
 }
