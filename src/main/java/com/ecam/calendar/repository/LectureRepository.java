@@ -11,13 +11,13 @@ import java.util.Optional;
 @Repository
 public interface LectureRepository extends JpaRepository<Lecture, Long>{
 
-    //function find a course by its ue
+    //function find a lecture by its code
     Optional<Lecture> findBycode(String code);
 
-    //function to find all courses linked to an ue
+    //function to find all lectures linked to an code
     List<Lecture> findAllBycode(String code);
 
-    //function to find all the courses linked to a teacher
+    //function to find all the lectures linked to a teacher
     List<Lecture> findAllByteachers(String teachers);
 
 

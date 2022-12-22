@@ -25,15 +25,13 @@ public class RoomController {
      * add a new course to the database
      *
      * body needs to look like :    {
-     *         "courseId":1,
-     *         "name":"fluid dynamics and microbiology applied to ethics",
-     *         "teacher":"Dr fun",
-     *         "ue":"ethics101",
-     *         "year:1
+     *         "capacity": 21,
+     *         "type": "2e44",
+     *         "roomId": 1
      *     }
      *
-     * @param course new course
-     * @return the new course
+     * @param room new room
+     * @return the new room
      */
     @RequestMapping(value="/rooms", method= RequestMethod.POST)
     public Room createRoom(@RequestBody Room room) {
@@ -42,25 +40,25 @@ public class RoomController {
 
 
     /**
-     * Read all the courses in the database
+     * Read all the rooms in the database
      *
      *
-     * @return all the courses
+     * @return all the rooms
      */
     @RequestMapping(value="/rooms", method=RequestMethod.GET)
-    public List<Room> readCourses() {
+    public List<Room> readRooms() {
         return RoomService.getRooms();
     }
 
 
     /**
-     * read a course by its id
+     * read a room by its id
      *
-     * @param id id of the course to be read
-     * @return the course linked to the provided id
+     * @param id id of the room to be read
+     * @return the room linked to the provided id
      */
     @RequestMapping(value="/{roomId}", method=RequestMethod.GET)
-    public Optional<Room> readCourseById(@PathVariable(value = "roomId") Long id) {
+    public Optional<Room> readRoomById(@PathVariable(value = "roomId") Long id) {
         return RoomService.getRoomById(id);
     }
 
@@ -68,43 +66,32 @@ public class RoomController {
      * update a course which already exists
      *
      * body needs to look like :    {
-     *         "courseId":1,
-     *         "name":"fluid dynamics and microbiology applied to ethics",
-     *         "teacher":"Dr fun",
-     *         "ue":"ethics101",
-     *         "year:1
+     *
+     *         "capacity": 21,
+     *         "type": "2e44",
+     *         "roomId": 1
      *     }
      *
-     * @param id id of the course to be updated
-     * @param roomDetails new course data
-     * @return the updated course
+     * @param id id of the room to be updated
+     * @param roomDetails new room data
+     * @return the updated room
      */
     @RequestMapping(value="/rooms/{roomId}", method=RequestMethod.PUT)
-    public Room updateCourses(@PathVariable(value = "roomId") Long id, @RequestBody Room roomDetails) {
+    public Room updateRooms(@PathVariable(value = "roomId") Long id, @RequestBody Room roomDetails) {
         return RoomService.updateRoom(id, roomDetails);
     }
 
 
     /**
-     * delete a course
+     * delete a room
      *
-     * @param id id of the course to be deleted
+     * @param id id of the room to be deleted
      */
     @RequestMapping(value="/rooms/{roomId}", method=RequestMethod.DELETE)
     public void deleteRoom(@PathVariable(value = "roomId") Long id) {
         RoomService.deleteRoom(id);
     }
 
-    /**
-     * read all the course in an ue
-     *
-     * @param ue ue for which you wish to find the courses
-     * @return list of courses linked to the provided ue
-     */
-    /*@RequestMapping(value="/getByUE/{ue}", method=RequestMethod.GET)
-    public List<Room> getCoursesByUE(@PathVariable(value = "ue") String ue) {
-        return courseService.getCoursesByUE(ue);
-    }*/
 
     /**
      * read all the course in an academic year

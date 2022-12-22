@@ -31,13 +31,11 @@ public class UserController {
     /**
      * POST method '/user/users' creating users with params
      * body need to look like : {
-     *      userId: 1
-     *      firstname: test
-     *      lastname: test
-     *      email:test
-     *      role: test
-     *      matricule : 1
-     *      trigram : test
+     *      "userId": 5,
+     *     "firstName": "GYYG",
+     *     "lastName": "ANGGGGGGGGGGGGD",
+     *     "role": "FAITRIEN",
+     *     "matricule": 195
      * }
      * @param User param user object
      * @return new posted user
@@ -69,13 +67,12 @@ public class UserController {
     /**
      * PUT method '/user/users/{userId}' updating the user with the specified id
      * body need to look like : {
-     *          userId: 1
-     *          firstname: test
-     *          lastname: test
-     *          email:test
-     *          role: test
-     *          matricule : 1
-     *          trigram : test
+     *          "userId": 5,
+         *     "firstName": "GYYG",
+         *     "lastName": "ANGGGGGGGGGGGGD",
+         *     "role": "FAITRIEN",
+         *     "matricule": 1
+     *     95
      *    }
      *
      * @param id of the user to modify

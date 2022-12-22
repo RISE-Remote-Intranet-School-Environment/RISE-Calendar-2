@@ -19,7 +19,7 @@ public class UserService {
 
     /**
      * Cette méthde crée un nouveau user
-     * @param User voir les parametre de la classe userModel
+     * @param User voir les parametre de la classe User de model
      * @return un objet user
      */
     public User createUser(User User) {
@@ -52,7 +52,7 @@ public class UserService {
     /**
      * Cette méthode met à jour le user identifié avec l'id avec les params passées
      * @param userId l'identifiant du user
-     * @param userDetails les parametre de l'objet user : voir userModel pour plus de détails
+     * @param userDetails les parametre de l'objet user : voir User dans model pour plus de détails
      * @return un objet user
      */
     public User updateUser(Long userId, User userDetails) {

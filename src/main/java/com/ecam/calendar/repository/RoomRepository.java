@@ -11,10 +11,10 @@ import java.util.Optional;
 @Repository
 public interface RoomRepository extends JpaRepository<Room, Long>{
 
-    //function find a course by its ue
+    //function find a rooms by its capacity
     List<Room> findAllByCapacity(Integer capacity);
 
-    //function to find all courses linked to an ue
+    //function to find all rooms linked to an type
     List<Room> findAllByType(String type);
 
 }

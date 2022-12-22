@@ -26,7 +26,7 @@ public class RoomService {
     //READ by id
     public Optional<Room> getRoomById(Long roomId){return RoomRepository.findById(roomId);}
 
-    // READ by teacher
+    // READ by teacherid
     public List<Room> getRoomByTeacherId(String typeId){return RoomRepository.findAllByType(typeId);}
     // DELETE
     public void deleteRoom(Long roomId) {
@@ -47,7 +47,7 @@ public class RoomService {
         return RoomRepository.findAllByCapacity(capacity);
     }
 
-    //read all courses linked to an academic year
+    //read all rooms linked to type
     public List<Room> getRoomsByType(String type) {
         return RoomRepository.findAllByType(type);
     }
