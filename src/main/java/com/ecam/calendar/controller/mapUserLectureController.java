@@ -1,9 +1,9 @@
 package com.ecam.calendar.controller;
 
 import com.ecam.calendar.model.User;
-import com.ecam.calendar.model.User.mapDocuCourseModel;
-import com.RISE.sylla.model.userModel;
-import com.RISE.sylla.service.mapDocuCourseService;
+import com.ecam.calendar.model.mapUserLecture;
+import com.ecam.calendar.model.Lecture;
+import com.ecam.calendar.service.mapUserLectureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,11 +22,11 @@ import com.RISE.sylla.service.mapDocuOrderService;
 
 
 @RestController
-@RequestMapping("mapDocuCourse")
-public class mapDocuCourseController {
+@RequestMapping("mapUserLecture")
+public class mapUserLectureController {
 
     @Autowired
-    mapDocuCourseService mapDocuCourseService;
+    mapUserLectureService mapUserLectureService;
 
 
     /**
@@ -41,7 +41,7 @@ public class mapDocuCourseController {
      * @param mapDocuCourse map to be posted
      * @return the posted map
      */
-    @RequestMapping(value="/mapDocuCourses", method= RequestMethod.POST)
+    @RequestMapping(value="/mapUserLectures", method= RequestMethod.POST)
     public mapDocuCourseModel createMapDocuCourse(@RequestBody mapDocuCourseModel mapDocuCourse) {
         return mapDocuCourseService.createMapDocuCourse(mapDocuCourse);
     }
@@ -51,7 +51,7 @@ public class mapDocuCourseController {
      *
      * @return all the map stored in database
      */
-    @RequestMapping(value="/mapDocuCourses", method=RequestMethod.GET)
+    @RequestMapping(value="/mapUserLectures", method=RequestMethod.GET)
     public List<mapDocuCourseModel> readMapDocuCourses() {
         return mapDocuCourseService.getMapDocuCourses();
     }
@@ -63,8 +63,8 @@ public class mapDocuCourseController {
      * @return the map which as the provided id
      */
     @RequestMapping(value="/{mapId}", method=RequestMethod.GET)
-    public Optional<mapDocuCourseModel> readMapById(@PathVariable(value = "mapId") Long id) {
-        return mapDocuCourseService.getMapById(id);
+    public Optional<mapUserLecture> readMapById(@PathVariable(value = "mapId") Long id) {
+        return mapUserLectureService.getMapById(id);
     }
 
 
@@ -82,9 +82,9 @@ public class mapDocuCourseController {
      * @return the updated map
      */
 
-    @RequestMapping(value="/mapDocuCourses/{mapDocuCourseId}", method=RequestMethod.PUT)
-    public mapDocuCourseModel updateMapDocuCourses(@PathVariable(value = "mapDocuCourseId") Long id, @RequestBody mapDocuCourseModel mapDocuCourseDetails) {
-        return mapDocuCourseService.updateMapDocuCourse(id, mapDocuCourseDetails);
+    @RequestMapping(value="/mapUserLectures/{mapUserLectureId}", method=RequestMethod.PUT)
+    public mapUserLecture updateMapUserLectures(@PathVariable(value = "mapUserLectureId") Long id, @RequestBody mapDocuCourseModel mapDocuCourseDetails) {
+        return mapUserLectureService.updateUserLecture(id, mapDocuCourseDetails);
     }
 
     /**
