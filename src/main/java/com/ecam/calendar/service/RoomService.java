@@ -42,7 +42,7 @@ public class RoomService {
         return RoomRepository.save(room);
     }
 
-    // read all courses linked to an ue
+    // read all rooms linked to a capacity
     public List<Room> getRoomsByCapacity(Integer capacity) {
         return RoomRepository.findAllByCapacity(capacity);
     }
