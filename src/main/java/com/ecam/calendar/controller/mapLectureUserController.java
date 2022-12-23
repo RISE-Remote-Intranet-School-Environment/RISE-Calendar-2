@@ -92,7 +92,7 @@ public class mapLectureUserController {
      * @param id id of the course for which you wish to find the documents
      * @return list of document
      */
-    @RequestMapping(value="/getDocsByCourseId/{courseId}", method=RequestMethod.GET)
+    @RequestMapping(value="/getLecturesByUserId/{userid}", method=RequestMethod.GET)
     public List<Optional<Lecture>> readLecturesByUserId(@PathVariable(value = "userid") Long id) {
         return mapLectureUserService.getLectureByUserId(id);
     }
