@@ -70,7 +70,7 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDial
 server.port=8081
 ```
 ### Run
-Run CalendarApplication located in `src\main\java\com\ecam\calendar/CalendarApplication.java` with your IDE (we used `IntelliJ`.
+Run CalendarApplication located in `src\main\java\com\ecam\calendar/CalendarApplication.java` with your IDE (we used `IntelliJ`).
 
 ### Run tests
 
@@ -111,11 +111,11 @@ Here is the database relational diagram used in the project.
 
 ## Code documentation
 
-The code is documented using `Javadoc`. You can view the code documentation by loading [index.html][code-documentation] file.
+The code is documented using `Javadoc`.
 
 ## Some Improvements
+
 * Search the timetable off a room (the table is already created).
-* Create a documented API.
 
 ## Acknowledgments
 
