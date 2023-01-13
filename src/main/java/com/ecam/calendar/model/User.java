@@ -1,11 +1,6 @@
 package com.ecam.calendar.model;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.util.Optional;
+
+import javax.persistence.*;
 
 /**
  * Cette classe est le "template" de user et contient les get/set afin de modifier ses parametres
@@ -65,6 +60,11 @@ public class User {
     private String role;
     @Column(name="matricule")
     private int matricule;
+
+
+
+
+
 
     public Long getUserId() {
         return userId;

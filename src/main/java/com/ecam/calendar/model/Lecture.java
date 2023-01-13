@@ -1,12 +1,7 @@
 package com.ecam.calendar.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
 
@@ -38,8 +33,30 @@ public class Lecture {
     @Column(name = "teachers")
     private String teachers;
 
+
+
+    public Integer getSessionNumber() {
+        return sessionNumber;
+    }
+
+    public void setSessionNumber(Integer sessionNumber) {
+        this.sessionNumber = sessionNumber;
+    }
+
     @Column(name = "weekday")
     private Date weekDay;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public long getLectureId() {
