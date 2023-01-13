@@ -29,7 +29,7 @@ Spring Boot is a framework used to build stand-alone application and production 
 
 For more information about Spring Boot, view the [official documentation][spring-boot].
 
-### Prerequesites
+### Prerequisites
 
 Before launch the application, you have to satisfy the following requirements.
 
