@@ -1,50 +1,20 @@
 package com.ecam.calendar.model;
-import javax.persistence.*;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.*;
-import com.ecam.calendar.model.Lecture;
+import javax.persistence.Table;
+import java.util.Optional;
+
+/**
+ * Cette classe est le "template" de user et contient les get/set afin de modifier ses parametres
+ */
 
 @Entity
+@Table(name = "user")
 public class User {
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
-    private String firstName;
-    private String lastName;
-    private String role;
-
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
-    @JoinTable(name = "link_lecture_user",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "lecture_id")
-    )
-    private List<Lecture> lectures = new ArrayList<>();
-
-    public User() {}
-
-    public User(String firstName, String lastName, String role) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.role = role;
-    }
-
-    @Override
-    public String toString() {
-        return String.format(
-                "User[id=%d, firstName='%s', lastName='%s', role='%s']",
-                id, firstName, lastName, role);
-    }
-
-    public Long getId() {
-        return id;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -57,34 +27,50 @@ public class User {
     public String getRole() {
         return role;
     }
-
-    public void addLecture(Lecture lecture) {
-        lectures.add(lecture);
-        lecture.getUsers().add(this);
+    public int getMatricule() {
+        return matricule;
     }
 
-    public void removeLecture(Lecture lecture) {
-        lectures.remove(lecture);
-        lecture.getUsers().remove(this);
-    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+
+
     public void setRole(String role) {
         this.role = role;
     }
 
-    public void setLectures(List<Lecture> lectures) {
-        this.lectures = lectures;
+    public void setMatricule(int matricule) {
+        this.matricule = matricule;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="userid")
+    private Long userId;
+
+    @Column(name="firstname")
+    private String firstName;
+
+    @Column(name="lastname")
+    private String lastName;
+
+    @Column(name="role")
+    private String role;
+    @Column(name="matricule")
+    private int matricule;
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }

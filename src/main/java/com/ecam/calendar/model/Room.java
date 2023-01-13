@@ -16,7 +16,7 @@ public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="roomid")
-    private long roomId;
+    private long roomid;
 
     @Column(name="capacity")
     private Integer capacity;
@@ -26,11 +26,11 @@ public class Room {
 
 
     public long getRoomId() {
-        return roomId;
+        return roomid;
     }
 
     public void setRoomId(long roomId) {
-        this.roomId = roomId;
+        this.roomid = roomId;
     }
 
     public Integer getCapacity() {
