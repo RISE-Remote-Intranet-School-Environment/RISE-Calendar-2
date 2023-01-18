@@ -44,7 +44,7 @@ git clone https://github.com/RISE-Remote-Intranet-School-Environment/RISE-Calend
 ````
 ### Setup the database
 
-First, you have to import the database in MYSQL Workbench, to do that, you have to import the dump folder located in `/Assets/dumpsylla/`.
+There is no need to import any database, simply create an empty database with the name `calendar` as all tables will be created automatically when the application is launched.
 
 The configurations must be put in the folder with the name `application.properties`.
 
@@ -81,25 +81,22 @@ To run the tests, we run the project in the `CalendarApplicationTests.java`
 ## Tree Structure
 
 ```bash
-Calendar
+RISE-Calendar-2
     ├───.mvn
     │   └───wrapper
     └───src
         ├───main
         │   ├───java
-        │   │   └───Calendar
-        │   │       └───Calendar
-        │   │           ├───controller
-        │   │           ├───model
-        │   │           ├───repository
-        │   │           └───service
+        │   │   └───com.ecam.calendar
+        │   │       ├───controller
+        │   │       ├───model
+        │   │       ├───repository
+        │   │       └───service
         │   └───resources
         │        └───application.properties
         └───test
             └───java
-                └───Calendar
-                    └───Calendar
-                        └───controller
+                └───com.ecam.calendar
 ```
 ## Database
 
@@ -112,6 +109,7 @@ Here is the database relational diagram used in the project.
 ## Code documentation
 
 The code is documented using `Javadoc`.
+
 
 ## Some Improvements
 
