@@ -113,7 +113,9 @@ The code is documented using `Javadoc`.
 
 ## Some Improvements
 
-* Search the timetable off a room (the table is already created).
+* Search the timetable off a room (mapLectureRoom).
+* Addition of some attributes for models (face-to-face/remote, colours for some courses, ...)
+* Usage of OpenAPI
 
 ## Acknowledgments
 
