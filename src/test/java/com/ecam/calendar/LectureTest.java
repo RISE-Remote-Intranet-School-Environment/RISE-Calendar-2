@@ -19,7 +19,7 @@ import java.nio.charset.StandardCharsets;
 import java.sql.Date;
 import java.sql.Time;
 import java.time.LocalTime;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -49,7 +49,7 @@ public class LectureTest {
     public void LectureTestPost() throws Exception {
         LocalTime start = LocalTime.now();
         LocalTime end = LocalTime.now().plusHours(2);
-        LocalDateTime week = LocalDateTime.now();
+        LocalDate week = LocalDate.now();
         String url = "/lectures";
         Lecture lecture = new Lecture() ;
         lecture.setLectureId(33);
@@ -59,7 +59,7 @@ public class LectureTest {
         lecture.setEndTime(Time.valueOf(end));
         lecture.setsessionNumber(10);
         lecture.setTeachers("ABC");
-        lecture.setWeekDay(Date.valueOf(String.valueOf(week)));
+        lecture.setWeekDay(Date.valueOf(week));
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
         ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
