@@ -40,7 +40,7 @@ public class LectureTest {
 
     @Test
     public void LectureTestGet() throws Exception {
-        mockMvc.perform(get("/lecture/lectures")).andExpect(status().isOk());
+        mockMvc.perform(get("/lectures")).andExpect(status().isOk());
     }
 
     public static final MediaType APPLICATION_JSON_UTF8 = new MediaType(MediaType.APPLICATION_JSON.getType(), MediaType.APPLICATION_JSON.getSubtype(), StandardCharsets.UTF_8);
@@ -50,7 +50,7 @@ public class LectureTest {
         LocalTime start = LocalTime.now();
         LocalTime end = LocalTime.now().plusHours(2);
         LocalDateTime week = LocalDateTime.now();
-        String url = "/lecture/lectures";
+        String url = "/lectures";
         Lecture lecture = new Lecture() ;
         lecture.setLectureId(33);
         lecture.setCode("1234");
@@ -77,6 +77,6 @@ public class LectureTest {
 
     @Test
     public void LectureTestDelete() throws Exception {
-        mockMvc.perform(delete("/lecture/lectures/{lectureId}","1")).andExpect(status().isOk());
+        mockMvc.perform(delete("/lectures/{lectureId}","1")).andExpect(status().isOk());
     }
 }

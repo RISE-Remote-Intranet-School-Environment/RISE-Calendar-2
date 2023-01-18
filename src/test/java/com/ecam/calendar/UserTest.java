@@ -36,14 +36,14 @@ public class UserTest {
 
     @Test
     public void UserTestGet() throws Exception {
-        mockMvc.perform(get("/user/users")).andExpect(status().isOk());
+        mockMvc.perform(get("/users")).andExpect(status().isOk());
     }
 
     public static final MediaType APPLICATION_JSON_UTF8 = new MediaType(MediaType.APPLICATION_JSON.getType(), MediaType.APPLICATION_JSON.getSubtype(), StandardCharsets.UTF_8);
 
     @Test
     public void UserTestPost() throws Exception {
-        String url = "/user/users";
+        String url = "/users";
         User user = new User() ;
         user.setUserId(33L);
         user.setFirstName("Michael");
@@ -67,6 +67,6 @@ public class UserTest {
 
     @Test
     public void UserTestDelete() throws Exception {
-        mockMvc.perform(delete("/user/users{userId}","1")).andExpect(status().isOk());
+        mockMvc.perform(delete("/users{userId}","1")).andExpect(status().isOk());
     }
 }

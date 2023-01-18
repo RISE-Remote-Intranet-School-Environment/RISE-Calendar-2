@@ -36,14 +36,14 @@ public class RoomTest {
 
     @Test
     public void RoomTestGet() throws Exception {
-        mockMvc.perform(get("/room/rooms")).andExpect(status().isOk());
+        mockMvc.perform(get("/rooms")).andExpect(status().isOk());
     }
 
     public static final MediaType APPLICATION_JSON_UTF8 = new MediaType(MediaType.APPLICATION_JSON.getType(), MediaType.APPLICATION_JSON.getSubtype(), StandardCharsets.UTF_8);
 
     @Test
     public void RoomTestPost() throws Exception {
-        String url = "/room/rooms";
+        String url = "/rooms";
         Room room = new Room() ;
         room.setRoomId(33);
         room.setType("Classroom");
@@ -65,6 +65,6 @@ public class RoomTest {
 
     @Test
     public void RoomTestDelete() throws Exception {
-        mockMvc.perform(delete("/room/rooms{roomId}","1")).andExpect(status().isOk());
+        mockMvc.perform(delete("/rooms{roomId}","1")).andExpect(status().isOk());
     }
 }
