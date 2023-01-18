@@ -37,7 +37,7 @@ public class LectureController {
     }
 
 
-    @RequestMapping(value="/lectures/{lectureId}", method=RequestMethod.DELETE)
+    @RequestMapping(value="/{lectureId}", method=RequestMethod.DELETE)
     public void deleteLecture(@PathVariable(value = "lectureId") Long id) {
         LectureService.deleteLecture(id);
     }

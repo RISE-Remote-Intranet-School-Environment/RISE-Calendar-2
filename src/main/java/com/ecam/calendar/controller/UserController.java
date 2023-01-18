@@ -82,7 +82,7 @@ public class UserController {
      * @param userDetails details to modify with variables
      * @return the user modified
      */
-    @RequestMapping(value="/users/{userId}", method=RequestMethod.PUT)
+    @RequestMapping(value="/{userId}", method=RequestMethod.PUT)
     public User updateUsers(@PathVariable(value = "userId") Long id, @RequestBody User userDetails) {
         return UserService.updateUser(id, userDetails);
     }
@@ -91,7 +91,7 @@ public class UserController {
      * DELETE method 'user/users/{uderId}' with specified id of the user
      * @param id of the user to delete
      */
-    @RequestMapping(value="/users/{userId}", method=RequestMethod.DELETE)
+    @RequestMapping(value="/{userId}", method=RequestMethod.DELETE)
     public void deleteUser(@PathVariable(value = "userId") Long id) {
         UserService.deleteUser(id);
     }

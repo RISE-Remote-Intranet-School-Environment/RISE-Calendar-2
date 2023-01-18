@@ -36,14 +36,14 @@ public class UserTest {
 
     @Test
     public void UserTestGet() throws Exception {
-        mockMvc.perform(get("/users")).andExpect(status().isOk());
+        mockMvc.perform(get("/user/{userId}" ,"1")).andExpect(status().isOk());
     }
 
     public static final MediaType APPLICATION_JSON_UTF8 = new MediaType(MediaType.APPLICATION_JSON.getType(), MediaType.APPLICATION_JSON.getSubtype(), StandardCharsets.UTF_8);
 
     @Test
     public void UserTestPost() throws Exception {
-        String url = "/users";
+        String url = "/user/users";
         User user = new User() ;
         user.setUserId(33L);
         user.setFirstName("Michael");
@@ -60,13 +60,9 @@ public class UserTest {
                 .andExpect(status().isOk());
     }
 
-    @Test
-    public void UserIdGet() throws Exception {
-        mockMvc.perform(get("/user/{userId}", "1")).andExpect(status().isOk());
-    }
 
     @Test
     public void UserTestDelete() throws Exception {
-        mockMvc.perform(delete("/users{userId}","1")).andExpect(status().isOk());
+        mockMvc.perform(delete("/user/{userId}","1")).andExpect(status().isOk());
     }
 }

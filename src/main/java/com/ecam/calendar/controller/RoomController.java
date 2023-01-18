@@ -90,7 +90,7 @@ public class RoomController {
      *
      * @param id id of the course to be deleted
      */
-    @RequestMapping(value="/rooms/{roomId}", method=RequestMethod.DELETE)
+    @RequestMapping(value="/{roomId}", method=RequestMethod.DELETE)
     public void deleteRoom(@PathVariable(value = "roomId") Long id) {
         RoomService.deleteRoom(id);
     }
