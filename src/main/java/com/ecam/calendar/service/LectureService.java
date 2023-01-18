@@ -43,7 +43,7 @@ public class LectureService {
         lectureDetails.setCode(lectureDetails.getCode());
         lectureDetails.setRoom(lectureDetails.getRoom());
         lectureDetails.setTeachers(lectureDetails.getTeachers());
-        lectureDetails.setsessionNumber(lectureDetails.getsessionNumber());
+        lectureDetails.setSessionNumber(lectureDetails.getSessionNumber());
         lectureDetails.setStartTime(lectureDetails.getStartTime());
         lectureDetails.setEndTime(lectureDetails.getEndTime());
         lectureDetails.setWeekDay(lectureDetails.getWeekDay());

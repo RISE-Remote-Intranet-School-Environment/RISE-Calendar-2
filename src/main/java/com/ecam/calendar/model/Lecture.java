@@ -33,29 +33,8 @@ public class Lecture {
     @Column(name = "teachers")
     private String teachers;
 
-
-
-    public Integer getSessionNumber() {
-        return sessionNumber;
-    }
-
-    public void setSessionNumber(Integer sessionNumber) {
-        this.sessionNumber = sessionNumber;
-    }
-
     @Column(name = "weekday")
     private Date weekDay;
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -71,15 +50,15 @@ public class Lecture {
         return code;
     }
 
-    public void setCode(String code) {
-
+    public void setCode(String code)  {
+        this.code = code;
     }
 
     public String getRoom() {
         return room;
     }
 
-    public  void setRoom(String code) {
+    public  void setRoom(String room) {
         this.room = room;
     }
 
@@ -91,11 +70,11 @@ public class Lecture {
         this.teachers = teachers;
     }
 
-    public Integer getsessionNumber() {
+    public Integer getSessionNumber() {
         return sessionNumber;
     }
 
-    public void setsessionNumber(Integer sessionNumber) {
+    public void setSessionNumber(Integer sessionNumber) {
         this.sessionNumber = sessionNumber;
     }
 

@@ -57,7 +57,7 @@ public class LectureTest {
         lecture.setRoom("4321");
         lecture.setStartTime(Time.valueOf(start));
         lecture.setEndTime(Time.valueOf(end));
-        lecture.setsessionNumber(10);
+        lecture.setSessionNumber(10);
         lecture.setTeachers("ABC");
         lecture.setWeekDay(Date.valueOf(week));
         ObjectMapper mapper = new ObjectMapper();
