@@ -36,14 +36,14 @@ public class mapLectureUserTest {
 
     @Test
     public void mapLectureUserTestGet() throws Exception {
-        mockMvc.perform(get("/mapLectureUsers")).andExpect(status().isOk());
+        mockMvc.perform(get("/mapLectureUser/{mapLectureUserId}","1")).andExpect(status().isOk());
     }
 
     public static final MediaType APPLICATION_JSON_UTF8 = new MediaType(MediaType.APPLICATION_JSON.getType(), MediaType.APPLICATION_JSON.getSubtype(), StandardCharsets.UTF_8);
 
     @Test
     public void mapLectureUserTestPost() throws Exception {
-        String url = "/mapLectureUsers";
+        String url = "/mapLectureUser/mapLectureUsers";
         mapLectureUserModel mapLectureUser = new mapLectureUserModel() ;
         mapLectureUser.setFklecture(33L);
         mapLectureUser.setFkuser(36L);
@@ -58,13 +58,9 @@ public class mapLectureUserTest {
                 .andExpect(status().isOk());
     }
 
-    @Test
-    public void mapLectureUserIdGet() throws Exception {
-        mockMvc.perform(get("/getLecturesByUserId/{userid}", "1")).andExpect(status().isOk());
-    }
 
     @Test
     public void mapLectureUserTestDelete() throws Exception {
-        mockMvc.perform(delete("/mapLectureUsers/{mapLectureUserId}","1")).andExpect(status().isOk());
+        mockMvc.perform(delete("/mapLectureUser/{mapLectureUserId}","1")).andExpect(status().isOk());
     }
 }

@@ -11,7 +11,7 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("mapLectureUser")
+@RequestMapping("/mapLectureUser")
 public class mapLectureUserController {
 
     @Autowired
@@ -51,8 +51,8 @@ public class mapLectureUserController {
      * @param id id of the map to be returned
      * @return the map which as the provided id
      */
-    @RequestMapping(value="/{mapId}", method=RequestMethod.GET)
-    public Optional<mapLectureUserModel> readMapById(@PathVariable(value = "mapId") Long id) {
+    @RequestMapping(value="/{mapLectureUserId}", method=RequestMethod.GET)
+    public Optional<mapLectureUserModel> readMapById(@PathVariable(value = "mapLectureUserId") Long id) {
         return mapLectureUserService.getMapById(id);
     }
 
@@ -71,7 +71,7 @@ public class mapLectureUserController {
      * @return the updated map
      */
 
-    @RequestMapping(value="/mapLectureUsers/{mapLectureUserId}", method=RequestMethod.PUT)
+    @RequestMapping(value="/{mapLectureUserId}", method=RequestMethod.PUT)
     public mapLectureUserModel updateMapLectureUsers(@PathVariable(value = "mapLectureUserId") Long id, @RequestBody mapLectureUserModel mapLectureUserDetails) {
         return mapLectureUserService.updateMapLectureUser(id, mapLectureUserDetails);
     }
@@ -81,8 +81,8 @@ public class mapLectureUserController {
      *
      * @param id id of the map to be deleted
      */
-    @RequestMapping(value="/mapLectureUsers/{mapLectureUserId}", method=RequestMethod.DELETE)
-    public void deleteMapLectureUser(@PathVariable(value = "mapDocuCourseId") Long id) {
+    @RequestMapping(value="/{mapLectureUserId}", method=RequestMethod.DELETE)
+    public void deleteMapLectureUser(@PathVariable(value = "mapLectureUserId") Long id) {
         mapLectureUserService.deleteMapLectureUser(id);
     }
 
